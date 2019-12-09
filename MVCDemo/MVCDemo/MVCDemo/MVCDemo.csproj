@@ -198,8 +198,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AjaxController.cs" />
+    <Compile Include="Controllers\FormController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\StudentTablesController.cs" />
     <Compile Include="Controllers\StuListController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -222,6 +225,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\MyHTMLHelper.cs" />
     <Compile Include="Models\studentgrade.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -317,11 +321,19 @@
     <Content Include="Views\StuList\Delete.cshtml" />
     <Content Include="Views\StuList\Edit.cshtml" />
     <Content Include="Views\StuList\Create.cshtml" />
+    <Content Include="Views\StudentTables\Create.cshtml" />
+    <Content Include="Views\StudentTables\Delete.cshtml" />
+    <Content Include="Views\StudentTables\Details.cshtml" />
+    <Content Include="Views\StudentTables\Edit.cshtml" />
+    <Content Include="Views\StudentTables\Index.cshtml" />
+    <Content Include="Views\Ajax\Index.cshtml" />
+    <Content Include="Views\Form\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\AddStudent\" />
     <Folder Include="Views\DeleteStudent\" />
+    <Folder Include="Views\StuDemo\" />
     <Folder Include="Views\StudentList\" />
     <Folder Include="Views\UpdateStudent\" />
   </ItemGroup>

@@ -24,10 +24,11 @@ namespace MVCDemo.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Create(StudentTable stu)
+        public ActionResult Create(StudentTable stu,FormCollection fc)
         {
-            ViewData.Model = dbcontent.StudentTable.AsEnumerable();
-            return View();
+            dbcontent.StudentTable.Add(stu);
+            dbcontent.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         public ActionResult Delete(int id)
@@ -48,9 +49,23 @@ namespace MVCDemo.Controllers
         [HttpPost]
         public ActionResult Delete(int id,FormCollection fc)
         {
-            ViewData.Model = dbcontent.StudentTable.Find(id);
-            return View();
+            StudentTable stu = new StudentTable();
+            stu.id = id;
+
+            dbcontent.StudentTable.Attach(stu);
+            dbcontent.Entry(stu).State = System.Data.Entity.EntityState.Deleted;
+            dbcontent.SaveChanges();
+
+            return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        public ActionResult Edit(int id, StudentTable stu)
+        {
+            
+            dbcontent.Entry(stu).State = System.Data.Entity.EntityState.Modified;
+            dbcontent.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

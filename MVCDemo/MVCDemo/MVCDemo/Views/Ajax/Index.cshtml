@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script type="text/javascript"  >
+    $(function(){
+        $("#AjaxBtnDemo").click(function () {
+            $.ajax({
+                url: "/Ajax/Date",
+                type: "Post",
+                data: {},
+                success: function (data) {
+                    alert(data);
+                }
+            })
+        })
+        function ajaxFun() {
+            $.ajax({
+                url: "/Ajax/Date",
+                type: "Post",
+                data: {},
+                success: function (data) {
+                    alert(data);
+                }
+            })
+        }
+
+    })
+</script>
+<h2>Index</h2>
+<div>
+    <input type="button" name="AjaxBtn" id ="AjaxBtnDemo" value="AjaxBtn" onclick="ajaxFun" />
+
+
+
+</div>
